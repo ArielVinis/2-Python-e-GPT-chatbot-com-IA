@@ -1,4 +1,4 @@
-# OpenAI: Curso 2
+# OpenAI: Python e GPT: criando chatbot com IA
 
 ## ⚙️ Configuração do Ambiente
 
