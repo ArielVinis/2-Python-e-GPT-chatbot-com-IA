@@ -40,7 +40,7 @@ pip install numpy openai python-dotenv tiktoken flask opencv-python
 - A implementar threads e assistentes com capacidade de consulta em arquivos para estruturação de respostas contextualizadas;
 - A usar metadados para gerenciar um assistente por aplicação.
 
-## 04. Refatorando o código e incluindo ferrmantas: Functions Calling
+## 04. Refatorando o código e incluindo ferramentas: Functions Calling
 
 - Estruturar functions utilizando a OpenAI;
 - Descrever functions para uso com a API da OpenAI;
