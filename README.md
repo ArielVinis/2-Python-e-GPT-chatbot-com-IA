@@ -1,53 +1,101 @@
-# OpenAI: Python e GPT: criando chatbot com IA
+# OpenAI: Python e GPT - Criando Chatbot com IA
 
-## ⚙️ Configuração do Ambiente
+## Sobre o Projeto
 
-### Criando e Ativando o Ambiente Virtual
+Este repositório contém a implementação de um chatbot inteligente utilizando a API da OpenAI com Python. O projeto demonstra como integrar o GPT para gerar respostas dinâmicas, além de funcionalidades avançadas, como processamento de imagens com OpenAI Vision, em uma aplicação web desenvolvida com Flask.
 
-**Windows:**
+🔗 **Repositório:** [2-Python-e-GPT-chatbot-com-IA](https://github.com/ArielVinis/2-Python-e-GPT-chatbot-com-IA)
 
-```bash
-python -m venv curso_2_openai
-curso_2_openai\Scripts\activate
+## Objetivos
+
+- Integrar a API da OpenAI para criar um chatbot inteligente.
+- Desenvolver uma aplicação web com Flask para interagir com o chatbot.
+- Implementar funcionalidades avançadas, como:
+  - Processamento e interpretação de imagens com OpenAI Vision.
+  - Gerenciamento do histórico de conversas.
+  - Functions Calling para funcionalidades adicionais, como validação de cupons.
+- Refinar o contexto e a personalização da conversa para diferentes cenários.
+
+## Tecnologias Utilizadas
+
+- **Python**: Linguagem principal da aplicação.
+- **OpenAI API**: Para integração com o GPT e outras funcionalidades.
+- **Flask**: Microframework para criação do servidor web e definição de rotas.
+- **numpy**: Suporte para operações matemáticas.
+- **python-dotenv**: Gerenciamento de variáveis de ambiente.
+- **tiktoken**: Manipulação de tokens para a API da OpenAI.
+- **opencv-python**: Processamento de imagens.
+- **Outras dependências**: Definidas em `requirements.txt`.
+
+## Funcionalidades do Projeto
+
+1. **Integração com o Front-End**
+   - Conexão do GPT ao front-end do chatbot através de rotas definidas com Flask.
+   - Associação de um documento para definir o contexto da conversa.
+
+2. **Refinamento do Contexto**
+   - Personalização da experiência do usuário para contextos específicos, como em um e-commerce.
+   - Utilização de documentos distintos para adaptar a conversa à persona desejada.
+
+3. **Gerenciamento do Histórico**
+   - Implementação de assistentes e threads para manter um histórico coerente das interações.
+   - Uso de metadados para gerenciar o histórico e melhorar a contextualização das respostas.
+
+4. **Refatoração e Functions Calling**
+   - Organização do código em funções estruturadas para interação com a API da OpenAI.
+   - Implementação de Functions Calling para funcionalidades avançadas, como a validação de cupons.
+
+5. **Interpretação de Imagens com OpenAI Vision**
+   - Adaptação da aplicação Flask para a leitura e processamento de imagens.
+   - Gerenciamento de imagens temporárias e análise via OpenAI Vision para gerar respostas dinâmicas.
+
+## Estrutura do Projeto
+```
+chatbot-ia/
+├── src/
+│ ├── app.py # Aplicação Flask principal
+│ ├── routes/ # Definição das rotas do chatbot
+│ ├── services/ # Funções para interação com a API da OpenAI
+│ ├── templates/ # Arquivos HTML para o front-end
+│ └── static/ # Arquivos estáticos (JS, CSS, imagens)
+│
+├── .env # Variáveis de ambiente
+├── requirements.txt # Lista de dependências
+└── README.md # Documentação do projeto
 ```
 
-### Instalação das Bibliotecas
 
-```bash
-pip install numpy openai python-dotenv tiktoken flask opencv-python
-```
+## Como Configurar e Executar a Aplicação
 
-## 📚 Referências de Leitura
+1. **Clone o repositório:**
+  ```sh
+  git clone https://github.com/ArielVinis/2-Python-e-GPT-chatbot-com-IA.git
+  cd 2-Python-e-GPT-chatbot-com-IA
+  ```
 
-- [Documentação Whisper](https://openai.com/research/whisper)
-- [Documentação Dall-E](https://openai.com/research/dall-e)
-- [Preços OpenAI](https://openai.com/pricing)
-- [Áudios Longos](https://platform.openai.com/docs/guides/speech-to-text/prompting)
+2. **Crie e ative o ambiente virtual:**
+  ```sh
+  python -m venv venv
+  source venv/bin/activate   # Linux/MacOS
+  venv\Scripts\activate      # Windows
+  ```
 
-## 01. Integrando a API com o front-end
+3. **Instale as dependências:**
+  ```sh
+  pip install -r requirements.txt
+  ```
 
-- Fazer a conexão do GPT com o front-end do nosso chatbot, através da criação de rotas usando o microframework Flask;
-- Conectar seu chatbot com a API da OpenAI e associar um documento para definição de contexto no seu chatbot.
+4. **Configure as variáveis de ambiente:
+• Crie um arquivo .env e defina as variáveis necessárias, por exemplo:
+  ```ini
+  OPENAI_API_KEY=your_openai_api_key
+  ```
 
-## 02. Refinando o contexto de um chatbot
+5. **Execute a aplicação:**
+  ```sh
+  flask run
+  ```
 
-- Aplicar a mudança de contexto em chatbots, criando uma experiência mais personalizada ao usuário em um e-commerce com base no uso de uma persona;
-- Utilizar documentos distintos para adequar o chatbot a um contexto específico, proporcionando uma experiência de usuário mais consistente, baseada na seleção adequada de contextos.
-
-## 03. Gerenciando o histórico do chatbot com um assistente
-
-- Qual é o papel de assistentes e threads na construção de um chatbot;
-- A implementar threads e assistentes com capacidade de consulta em arquivos para estruturação de respostas contextualizadas;
-- A usar metadados para gerenciar um assistente por aplicação.
-
-## 04. Refatorando o código e incluindo ferramentas: Functions Calling
-
-- Estruturar functions utilizando a OpenAI;
-- Descrever functions para uso com a API da OpenAI;
-- Implementar Functions Calling para validação de um cupom no e-commerce EcoMart.
-
-## 05. Interpretando imagens com OpenAI Vision
-
-- Adaptar uma aplicação Flask com chamadas JavaScript para que seja possível realizar a leitura de imagens em uma aplicação com chatbot;
-- Gerenciar imagens temporárias para interpretação utilizando OpenAI Vision;
-- Analisar imagens para composição de respostas do chatbot.
+## Considerações Finais
+Este projeto oferece uma abordagem prática para a criação de chatbots com inteligência artificial, integrando desde a conexão básica com a API da OpenAI até funcionalidades avançadas, como processamento de imagens e gerenciamento do histórico de interações.
+Contribuições e sugestões são bem-vindas! 🚀
